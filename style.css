@@ -1,36 +1,59 @@
+@font-face {
+    font-family: 'Kiddosy';
+    src: url('Kiddosy.otf') format('truetype');
+}
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: clip;
+    font-family: 'Kiddosy', monospace;
 }
 
 .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: sans-serif;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 5vw;
+  height: 100vh;
+  width: 100vw;
+  margin-bottom: 1vh;
 }
+
+.gameplay-area {
+  margin-top: 0;
+  transform: translateY(-5vh);
+  display: flex;
+  gap: 3vw;
+  align-items: flex-start;
+}
+
 h2 {
     font-size: 5vh;
     margin: 2vh;
-    color: #18210c
+    color: #18210c;
+    margin-bottom: 0;
+    transform: translateX(calc(0.5*100vw - 15vw));
+    font-family: 'Kiddosy', monospace;
+}
+
+p{
+    font-size: 5vh;
+    transform: translate(-6.5vw, 50vh);
 }
 .game-board {
     display: grid;
-    grid-template-columns: repeat(8, 10vh);
     background: #fff;
     --padding: 10px;
     box-shadow: 0 0 0 var(--padding) #9fddac;
     border-radius: 8px;
-
+    justify-content: flex-start;
     background-clip: content-box;
 
     /* checkered */
     background-image:linear-gradient(0deg, transparent 50%, #d43b3bc2 50%), linear-gradient(90deg, #d43b3bc2 50%, #ffffff 50%);
     background-size:5vw 5vw,5vw 5vw;
     background-position:0 0, 0 0px;
+    scale: 0.8;
 }
 .cell {
     text-align: center;
@@ -49,29 +72,31 @@ h2 {
     border: 0.3vh dashed #FFD700;
 }
 .controls {
-    margin-top: 10vh;
-    display: grid;
-    grid-template-columns: repeat(3, 3vw);
-    gap: 2vw;
+   transform: translate(50%, 150%);
+   display: grid;
+   grid-template-areas:
+       ". up ."
+       "left down right";
+   grid-gap: 1vh;
+   margin-left: 3vw;
 }
+
 .control-btn {
-    width: 3vw;
-    height: 3vw;
-    font-size: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3vh;
+   width: 10vh;
+   height: 10vh;
+   font-size: 5vh;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background: #f5f5f5;
 }
-.control-btn1{
-    width: 3vw;
-    height: 3vw;
-    font-size: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(5vw);
-    padding: 3vh;
+
+.control-btn[data-dir="up"] { grid-area: up; }
+.control-btn[data-dir="down"] { grid-area: down; }
+.control-btn[data-dir="left"] { grid-area: left; }
+.control-btn[data-dir="right"] { grid-area: right; }
+
+p2{
+    display: block;
+    font-size: 3vh;
+    transform: translate(-18vw, 65vh);
 }

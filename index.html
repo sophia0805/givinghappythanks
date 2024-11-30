@@ -11,14 +11,18 @@
 <body>
     <div class="game-container">
         <h2>Turkey Sokoban</h2>
-        <div id="gameBoard" class="game-board"></div>
-        <div class="controls">
-            <button class="control-btn" onclick="move(-1, 0)">⬅️</button>
-            <button class="control-btn" onclick="move(0, -1)">⬆️</button>
-            <button class="control-btn" onclick="move(1, 0)">➡️</button>
-            <button class="control-btn1" onclick="move(0, 1)">⬇️</button>
+        <div class="gameplay-area">
+            <div id="gameBoard" class="game-board"></div>
+            <div class="controls">
+                <button class="control-btn" data-dir="up">⬆️</button>
+                <button class="control-btn" data-dir="left">⬅️</button>
+                <button class="control-btn" data-dir="down">⬇️</button>
+                <button class="control-btn" data-dir="right">➡️</button>
+            </div>
+            <p>Moves: <span id="moves">0</span></p>
+            <p2><div>space to reset</div>
+            <div>arrow keys to move</div></p2>
         </div>
-        <p>Moves: <span id="moves">0</span></p>
     </div>
 
     <script src="script.js"></script>

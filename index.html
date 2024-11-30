@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <title>Thanksgiving Sokoban</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Turkey Sokoban</h2>
+        <div id="gameBoard" class="game-board"></div>
+        <div class="controls">
+            <button class="control-btn" onclick="move(-1, 0)">⬅️</button>
+            <button class="control-btn" onclick="move(0, -1)">⬆️</button>
+            <button class="control-btn" onclick="move(1, 0)">➡️</button>
+            <button class="control-btn1" onclick="move(0, 1)">⬇️</button>
+        </div>
+        <p>Moves: <span id="moves">0</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
